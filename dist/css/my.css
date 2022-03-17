@@ -1,0 +1,23 @@
+body{
+    background-color: purple;
+}
+
+.wrapper{
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.header{
+    font-size: 80px;
+    color: white;
+    margin-bottom: 160px;
+}
+
+table{
+    background-color: white;
+}
+
+table tr{
+    color: black;
+}

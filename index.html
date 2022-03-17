@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="dist/css/my.css">
+        <!-- Jquery -->
+        <script src="plugins/jQuery/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+        <!--Highchart-->
+        <script src="plugins/highchart/code/highcharts.js"></script>
+        <script src="plugins/highchart/code/modules/exporting.js"></script>-->
+    </head>
+    <body>
+        <!-- Start Of Wrapper-->
+        <div class="wrapper">
+            <div class="header">
+                Export Table To Graphics
+            </div>
+             <!-- Start Of Wrapper-->
+            <div class="content">
+                <!-- Start Of Row-->
+                <div class="row">
+                    <!-- Start Of Col-->
+                    <div class="col-xs-6">
+                        <div class="table">
+                            <table class="table" id="table_one"> 
+                                <tr>
+                                    <th>Date</th>
+                                    <th class="text-right">Amount</th>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-01</td>
+                                    <td class="text-right">6000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-02</td>
+                                    <td class="text-right">16000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-03</td>
+                                    <td class="text-right">10000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-04</td>
+                                    <td class="text-right">2000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-05</td>
+                                    <td class="text-right">3000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph_one"></div>
+                    </div>
+                    <!-- End Of Col-->
+                    <!-- Start Of Col-->
+                    <div class="col-xs-6">
+                        <div class="table">
+                            <table class="table" id="table_two"> 
+                                <tr>
+                                    <th>Date</th>
+                                    <th class="text-right">Amount</th>
+                                    <th class="text-right">Price</th>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-01</td>
+                                    <td class="text-right">60</td>
+                                    <td class="text-right">13000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-02</td>
+                                    <td class="text-right">160</td>
+                                    <td class="text-right">15000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-03</td>
+                                    <td class="text-right">610</td>
+                                    <td class="text-right">33000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-04</td>
+                                    <td class="text-right">100</td>
+                                    <td class="text-right">130000</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-05</td>
+                                    <td class="text-right">600</td>
+                                    <td class="text-right">213000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph_two"></div>
+                    </div>
+                    <!-- End Of Col-->
+                    <!-- Start Of Col-->
+                    <div class="col-xs-12" style="margin-top:80px">
+                        <div class="table">
+                            <table class="table" id="table_three"> 
+                                <tr>
+                                    <th>Date</th>
+                                    <th class="text-right">Amount</th>
+                                    <th class="text-right">Price</th>
+                                    <th class="text-right">Unit</th>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-01</td>
+                                    <td class="text-right">60</td>
+                                    <td class="text-right">13000</td>
+                                    <td class="text-right">150</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-02</td>
+                                    <td class="text-right">160</td>
+                                    <td class="text-right">15000</td>
+                                    <td class="text-right">410</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-03</td>
+                                    <td class="text-right">610</td>
+                                    <td class="text-right">33000</td>
+                                    <td class="text-right">450</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-04</td>
+                                    <td class="text-right">100</td>
+                                    <td class="text-right">130000</td>
+                                    <td class="text-right">750</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-01-05</td>
+                                    <td class="text-right">600</td>
+                                    <td class="text-right">213000</td>
+                                    <td class="text-right">850</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="graph_three"></div>
+                    </div>
+                    <!-- End Of Col-->
+                </div>
+                 <!-- End Of Row -->
+            </div>
+            <!-- End Of Content -->
+        </div>
+        <!-- End Of Wrapper-->
+    </body>
+    <script src="dist/js/app.js"></script>
+    <script>
+        /*Call Main Function
+            setChart([table id],[graph id],[graph title],[chart type],[chart color])
+        */
+        setChart("table_one","graph_one","Graph One",['area'],["#000080"]);
+        setChart("table_two","graph_two","Graph Two",['area','spline'],["#000080","#FF8000"]);
+        setChart("table_three","graph_three","Graph Three",['area','spline','spline'],["#FF8000","#03A89E","blue"]);
+    </script>
+</html>
